@@ -1,0 +1,63 @@
+
+{% extends "store/base.html" %}
+
+{% block title %}My Account | MyStore{% endblock %}
+
+{% block content %}
+<div class="profile-page">
+    <div class="profile-card">
+
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="bi bi-person-fill"></i>
+            </div>
+
+            <h2>Welcome, {{ request.user.username }}!</h2>
+            <p>Manage your account and shopping experience.</p>
+        </div>
+
+        <div class="profile-body">
+            <h4 class="mb-4">Account Information</h4>
+
+            <div class="profile-info">
+                <i class="bi bi-person"></i>
+                <div>
+                    <small>Username</small>
+                    <strong>{{ request.user.username }}</strong>
+                </div>
+            </div>
+
+            <div class="profile-info">
+                <i class="bi bi-envelope"></i>
+                <div>
+                    <small>Email Address</small>
+                    <strong>{{ request.user.email|default:"Not provided" }}</strong>
+                </div>
+            </div>
+
+            <div class="profile-info">
+                <i class="bi bi-calendar-check"></i>
+                <div>
+                    <small>Member Since</small>
+                    <strong>{{ request.user.date_joined|date:"F d, Y" }}</strong>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <a href="{% url 'store:product_list' %}"
+                   class="btn btn-primary">
+                    <i class="bi bi-bag me-2"></i>
+                    Continue Shopping
+                </a>
+
+                <a href="{% url 'store:home' %}"
+                   class="btn btn-outline-primary">
+                    <i class="bi bi-house me-2"></i>
+                    Home
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

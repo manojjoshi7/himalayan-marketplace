@@ -1,0 +1,66 @@
+
+{% extends "store/base.html" %}
+
+{% block title %}Create Account | MyStore{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="register-card">
+
+        <div class="register-icon">
+            <i class="bi bi-person-plus-fill"></i>
+        </div>
+
+        <h2>Create Account</h2>
+        <p class="register-subtitle">
+            Join us today and start shopping!
+        </p>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            {% for field in form %}
+                <div class="mb-3">
+                    <label
+                        for="{{ field.id_for_label }}"
+                        class="form-label"
+                    >
+                        {{ field.label }}
+                    </label>
+
+                    {{ field }}
+
+                    {% if field.help_text %}
+                        <div class="helptext">
+                            {{ field.help_text|safe }}
+                        </div>
+                    {% endif %}
+
+                    {% for error in field.errors %}
+                        <div class="text-danger small mt-1">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="register-btn">
+                Create My Account
+                <i class="bi bi-arrow-right ms-2"></i>
+            </button>
+        </form>
+
+        <div class="register-login-link">
+            Already have an account?
+            <a href="{% url 'accounts:login' %}">Sign in</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

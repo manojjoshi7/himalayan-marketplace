@@ -1,0 +1,78 @@
+
+{% extends "store/base.html" %}
+
+{% block title %}Login | MyStore{% endblock %}
+
+{% block content %}
+<div class="login-page">
+    <div class="login-card">
+
+        <div class="login-icon">
+            <i class="bi bi-person-lock"></i>
+        </div>
+
+        <h2>Welcome Back!</h2>
+        <p class="login-subtitle">
+            Sign in to continue shopping with us.
+        </p>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags|default:'info' }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <input type="hidden" name="next" value="{{ next }}">
+
+            <div class="mb-3">
+                <label for="username" class="form-label">
+                    Username
+                </label>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    class="form-control"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                    autofocus
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">
+                    Password
+                </label>
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-btn">
+                Sign In
+                <i class="bi bi-arrow-right ms-2"></i>
+            </button>
+        </form>
+
+        <div class="login-register-link">
+            Don't have an account?
+            <a href="{% url 'accounts:register' %}">
+                Create Account
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

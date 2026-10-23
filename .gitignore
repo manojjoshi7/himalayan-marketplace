@@ -1,0 +1,61 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python virtual environments
+venv/
+.venv/
+env/
+**/venv/
+**/.venv/
+**/env/
+
+# Python bytecode and cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Django generated files
+staticfiles/
+**/staticfiles/
+media/
+**/media/
+*.log
+local_settings.py
+
+# Local databases
+db.sqlite3
+*.sqlite3
+
+# Test and coverage output
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build and packaging output
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+*.tmp

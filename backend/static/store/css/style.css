@@ -1,0 +1,1099 @@
+
+/* =========================================
+   UTTARAKHAND E-COMMERCE
+   Theme: Himalayan Nature
+========================================= */
+
+
+/* =================================
+   1. Global Styles
+================================= */
+
+:root {
+    --primary: #234B35;
+    --primary-dark: #173825;
+
+    --secondary: #F6F0E3;
+    --cream: #F6F0E3;
+
+    --terracotta: #C66A3D;
+    --gold: #D8A84E;
+
+    --dark: #26372B;
+    --muted: #77796E;
+    --border: #E5DDCC;
+    --white: #FFFFFF;
+
+    --radius: 18px;
+    --shadow: 0 10px 35px rgba(35, 75, 53, 0.10);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, sans-serif;
+
+    background-color:var(--cream);
+    background-image:
+        radial-gradient(
+            ellipse at top left,
+            rgba(216, 168, 78, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #F6F0E3 0%,
+            #FAF7F0 50%,
+            #EEF0E4 100%
+        );
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    color: var(--dark);
+    line-height: 1.6;
+    margin: 0;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--terracotta);
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+
+/* =================================
+   2. Navigation
+================================= */
+
+.navbar {
+    background: var(--primary) !important;
+    padding: 16px 0;
+    box-shadow: 0 4px 20px rgba(35, 75, 53, 0.18);
+    border-bottom: 3px solid var(--gold);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: #FFFFFF !important;
+}
+
+.navbar-brand::first-letter {
+    color: var(--gold);
+}
+
+.navbar .nav-link {
+    color: #F6F0E3 !important;
+    font-weight: 500;
+    margin-left: 12px;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--gold) !important;
+}
+
+.navbar .navbar-toggler {
+    border-color: rgba(246, 240, 227, 0.55);
+}
+
+.navbar .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+/* =================================
+   3. Buttons
+================================= */
+
+.btn {
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(198, 106, 61, 0.22);
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-outline-secondary {
+    border-color: var(--border);
+    color: var(--dark);
+}
+
+.btn-outline-secondary:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+.btn:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+
+/* =================================
+   4. Hero Section
+================================= */
+
+.hero-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 65px 45px;
+    border-radius: 28px;
+    color: #FFFFFF;
+
+    background:
+        radial-gradient(
+            ellipse at 90% 10%,
+            rgba(216, 168, 78, 0.30),
+            transparent 38%
+        ),
+        linear-gradient(
+            125deg,
+            #173825 0%,
+            #234B35 60%,
+            #42664B 100%
+        );
+
+    box-shadow: 0 20px 45px rgba(35, 75, 53, 0.20);
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -45px;
+    bottom: -115px;
+    width: 300px;
+    height: 270px;
+    border: 35px solid rgba(216, 168, 78, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-section h1 {
+    color: #FFFFFF;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    max-width: 560px;
+    color: #F6F0E3;
+    font-size: 1.1rem;
+}
+
+.hero-section .btn {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--primary-dark);
+}
+
+.hero-section .btn:hover {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    color: #FFFFFF;
+}
+
+
+/* =================================
+   5. Section Headings
+================================= */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 42px 0 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 1.65rem;
+    color: var(--primary);
+}
+
+.section-heading a {
+    color: var(--terracotta);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.section-heading a:hover {
+    color: var(--primary);
+}
+
+
+/* =================================
+   6. Product Cards
+================================= */
+
+.product-card {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #FFFFFF;
+    box-shadow: 0 4px 16px rgba(35, 75, 53, 0.04);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: var(--gold);
+}
+
+.product-card .product-image {
+    display: block;
+    height: 230px;
+    width: 100%;
+    object-fit: cover;
+    background: var(--cream);
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.04);
+}
+
+.product-card .card-body {
+    padding: 20px;
+}
+
+.product-card .card-title {
+    color: var(--primary);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.product-category {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--terracotta);
+}
+
+.product-card .btn {
+    width: 100%;
+}
+
+
+/* =================================
+   7. Category Buttons
+================================= */
+
+.category-link {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 0 6px 8px 0;
+    border: 1px solid #D8CBAF;
+    border-radius: 30px;
+    background: var(--cream);
+    color: var(--primary);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.category-link:hover {
+    color: #FFFFFF;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+
+/* =================================
+   8. Forms and Inputs
+================================= */
+
+.form-control,
+.form-select {
+    min-height: 46px;
+    padding: 11px 14px;
+    border: 1px solid #D8CBAF;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: var(--dark);
+}
+
+.form-control::placeholder {
+    color: #969589;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(35, 75, 53, 0.12);
+}
+
+.form-label {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.form-check-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(35, 75, 53, 0.12);
+}
+
+
+/* =================================
+   9. Authentication Cards
+================================= */
+
+.auth-wrapper {
+    max-width: 480px;
+    margin: 45px auto;
+}
+
+.auth-card {
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: #FFFFFF;
+    box-shadow: var(--shadow);
+}
+
+.auth-card .card-body {
+    padding: 35px;
+}
+
+.auth-card h2 {
+    margin-bottom: 8px;
+}
+
+.auth-subtitle {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.auth-card .btn {
+    min-height: 48px;
+    width: 100%;
+}
+
+
+/* =================================
+   10. Registration Page
+================================= */
+
+.auth-page {
+    min-height: 75vh;
+    padding: 50px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(216, 168, 78, 0.17),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #F6F0E3,
+            #FAF7F0 55%,
+            #EAEDE1
+        );
+}
+
+.register-card {
+    width: 100%;
+    max-width: 520px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 20px 60px rgba(35, 75, 53, 0.12);
+    animation: registerAppear 0.5s ease-out;
+}
+
+.register-card h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.register-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.register-icon {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    border-radius: 20px;
+    background: var(--primary);
+    color: var(--gold);
+    font-size: 30px;
+    box-shadow: 0 10px 24px rgba(35, 75, 53, 0.20);
+}
+
+.register-card .form-label {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.register-card .form-control {
+    min-height: 49px;
+    border: 1px solid #D8CBAF;
+    border-radius: 12px;
+    padding: 12px 15px;
+    background: #FCFAF5;
+    transition: all 0.25s ease;
+}
+
+.register-card .form-control:focus {
+    background: #FFFFFF;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(35, 75, 53, 0.12);
+}
+
+.register-card .register-btn {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(35, 75, 53, 0.20);
+    transition: all 0.25s ease;
+}
+
+.register-card .register-btn:hover {
+    transform: translateY(-2px);
+    background: var(--terracotta);
+    box-shadow: 0 12px 25px rgba(198, 106, 61, 0.25);
+}
+
+.register-card .errorlist {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 10px;
+    color: #B42318;
+    font-size: 13px;
+}
+
+.register-card .helptext {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.register-login-link {
+    margin-top: 22px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.register-login-link a {
+    color: var(--terracotta);
+    font-weight: 700;
+}
+
+.register-login-link a:hover {
+    color: var(--primary);
+}
+
+@keyframes registerAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =================================
+   11. Login Page
+================================= */
+
+.login-page {
+    min-height: 75vh;
+    padding: 50px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(216, 168, 78, 0.17),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #F6F0E3,
+            #FAF7F0 55%,
+            #EAEDE1
+        );
+}
+
+.login-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 38px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(35, 75, 53, 0.12);
+    animation: loginAppear 0.5s ease-out;
+}
+
+.login-icon {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    background: var(--primary);
+    color: var(--gold);
+    font-size: 30px;
+    box-shadow: 0 10px 24px rgba(35, 75, 53, 0.20);
+}
+
+.login-card h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.login-card .form-label {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.login-card .form-control {
+    min-height: 49px;
+    padding: 12px 15px;
+    border: 1px solid #D8CBAF;
+    border-radius: 12px;
+    background: #FCFAF5;
+    transition: all 0.25s ease;
+}
+
+.login-card .form-control:focus {
+    background: #FFFFFF;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(35, 75, 53, 0.12);
+}
+
+.login-card .login-btn {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary);
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(35, 75, 53, 0.20);
+    transition: all 0.25s ease;
+}
+
+.login-card .login-btn:hover {
+    transform: translateY(-2px);
+    background: var(--terracotta);
+    box-shadow: 0 12px 25px rgba(198, 106, 61, 0.25);
+}
+
+.login-card .alert {
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.login-register-link {
+    margin-top: 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.login-register-link a {
+    color: var(--terracotta);
+    font-weight: 700;
+}
+
+.login-register-link a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+@keyframes loginAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =================================
+   12. Profile Page
+================================= */
+
+.profile-page {
+    min-height: 70vh;
+    padding: 45px 15px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(216, 168, 78, 0.14),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #F6F0E3,
+            #FAF7F0 55%,
+            #EAEDE1
+        );
+}
+
+.profile-card {
+    max-width: 850px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 15px 45px rgba(35, 75, 53, 0.10);
+}
+
+.profile-header {
+    padding: 35px;
+    text-align: center;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-bottom: 4px solid var(--gold);
+}
+
+.profile-header h2 {
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+.profile-header p {
+    margin: 0;
+    color: var(--cream);
+}
+
+.profile-avatar {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border: 4px solid rgba(216, 168, 78, 0.65);
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--primary);
+    font-size: 36px;
+}
+
+.profile-body {
+    padding: 30px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #FCFAF5;
+}
+
+.profile-info i {
+    color: var(--terracotta);
+    font-size: 24px;
+}
+
+.profile-info small {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--muted);
+}
+
+.profile-info strong {
+    color: var(--primary);
+    overflow-wrap: anywhere;
+}
+
+.profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.profile-actions .btn {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px 18px;
+    border-radius: 11px;
+    font-weight: 700;
+}
+
+
+/* =================================
+   13. Product Detail Page
+================================= */
+
+.product-detail-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.product-detail-image {
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 14px;
+    background: var(--cream);
+}
+
+.stock-available {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 30px;
+    background: #E4F0E5;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.stock-unavailable {
+    color: #B42318;
+    font-weight: 600;
+}
+
+
+/* =================================
+   14. Shopping Cart
+================================= */
+
+.cart-product-image,
+.cart-image-placeholder {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background: var(--cream);
+}
+
+.cart-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 30px;
+}
+
+.cart-item {
+    transition: background 0.2s ease;
+}
+
+.cart-item:hover {
+    background: #FCFAF5;
+}
+
+
+/* =================================
+   15. Alerts and Pagination
+================================= */
+
+.alert {
+    border: none;
+    border-radius: 12px;
+}
+
+.alert-success {
+    background: #E4F0E5;
+    color: #234B35;
+}
+
+.alert-danger {
+    background: #FCEAE5;
+    color: #8C3825;
+}
+
+.alert-warning {
+    background: #FBF0D8;
+    color: #694C17;
+}
+
+.alert-info {
+    background: #F0F0E6;
+    color: #354D3C;
+}
+
+.pagination .page-link {
+    margin: 0 3px;
+    border-radius: 8px !important;
+    color: var(--primary);
+    border-color: var(--border);
+    background: #FFFFFF;
+}
+
+.pagination .page-link:hover {
+    background: var(--cream);
+    color: var(--terracotta);
+}
+
+.pagination .active .page-link {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #FFFFFF;
+}
+
+
+/* =================================
+   16. Footer
+================================= */
+
+.site-footer {
+    margin-top: 70px;
+    padding: 35px 0;
+    color: var(--cream);
+    background: var(--primary);
+    border-top: 4px solid var(--gold);
+}
+
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5 {
+    color: #FFFFFF;
+}
+
+.site-footer a {
+    color: var(--gold);
+}
+
+.site-footer a:hover {
+    color: #FFFFFF;
+}
+
+
+/* =================================
+   17. Responsive Styles
+================================= */
+
+@media (max-width: 991px) {
+    .navbar .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .hero-section {
+        padding: 48px 32px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 38px 24px;
+        border-radius: 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .product-card .product-image {
+        height: 190px;
+    }
+
+    .auth-card .card-body {
+        padding: 24px;
+    }
+
+    .product-detail-card {
+        padding: 18px;
+    }
+
+    .section-heading {
+        margin-top: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-page,
+    .login-page {
+        min-height: 70vh;
+        padding: 28px 12px;
+    }
+
+    .register-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    .register-card h2 {
+        font-size: 25px;
+    }
+
+    .login-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    .login-card h2 {
+        font-size: 25px;
+    }
+
+    .profile-page {
+        padding: 28px 12px;
+    }
+
+    .profile-header {
+        padding: 28px 18px;
+    }
+
+    .profile-body {
+        padding: 20px;
+    }
+
+    .profile-info {
+        padding: 14px;
+    }
+
+    .profile-actions .btn {
+        min-width: 100%;
+    }
+
+    .cart-product-image,
+    .cart-image-placeholder {
+        height: 90px;
+    }
+
+    .product-detail-card {
+        padding: 16px;
+    }
+}
+
+
+/* =================================
+   18. Reduced Motion Accessibility
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

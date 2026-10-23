@@ -1,0 +1,94 @@
+
+{% extends "store/base.html" %}
+
+{% block title %}{{ product.name }} | My Store{% endblock %}
+
+{% block content %}
+
+<div class="row g-4 bg-white p-4 rounded shadow-sm">
+    
+
+
+    <div class="col-md-6">
+        {% if product.image %}
+            <img
+                src="{{ product.image }}"
+                alt="{{ product.name }}"
+                class="img-fluid rounded"
+                style="max-height: 450px; width: 100%; object-fit: contain;"
+            >
+        {% else %}
+            <div class="bg-light p-5 text-center rounded">
+                No product image available
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="col-md-6">
+        <p class="text-muted">
+            Category: {{ product.category.name }}
+        </p>
+
+        <h1>{{ product.name }}</h1>
+
+        <h3 class="text-primary my-3">
+            ₹{{ product.price|floatformat:2 }}
+        </h3>
+
+        <p>{{ product.description|default:"No description available." }}</p>
+
+        {% if product.stock > 0 %}
+            <p class="text-success">
+                In stock: {{ product.stock }} available
+            </p>
+
+                    <form method="post"
+            action="{% url 'cart:cart_add' product.id %}"
+            class="mt-4">
+            {% csrf_token %}
+
+            <label for="quantity" class="form-label">
+                Quantity
+            </label>
+
+            <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                value="1"
+                min="1"
+                max="{{ product.stock }}"
+                class="form-control mb-3"
+                style="max-width: 120px;"
+                {% if product.stock == 0 %}disabled{% endif %}
+                required
+            >
+
+            {% if product.stock > 0 %}
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="bi bi-cart-plus me-2"></i>
+                    Add to Cart
+                </button>
+            {% else %}
+                <button type="button" class="btn btn-secondary btn-lg" disabled>
+                    Out of Stock
+                </button>
+            {% endif %}
+        </form>
+        {% else %}
+            <p class="text-danger">Currently out of stock</p>
+        {% endif %}
+
+        <p class="text-muted mt-3">
+            Product SKU: {{ product.sku }}
+        </p>
+
+        <a href="{% url 'store:product_list' %}"
+           class="btn btn-outline-secondary mt-2">
+            Back to Products
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
