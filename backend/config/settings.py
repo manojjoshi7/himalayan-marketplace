@@ -158,11 +158,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Default primary key field type
 # LOGIN_URL,LOGIN_REDIRECT_URL,LOGOUT_REDIRECT_URL used to specify the URLs for login, redirect after login, and redirect after logout respectively. These settings are used by Django's authentication system to determine where to redirect users during the authentication process.
